@@ -1,1 +1,105 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Onclickd</title>
+    <meta name="author" content="Ciriac Tromp" />
+    <!-- favicons -->
+    <link
+      rel="shortcut icon"
+      href="images/favicons/favicon-16x16.png"
+      type="image/x-icon"
+      sizes="16x16"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/favicons/favicon-32x32.png"
+      type="image/x-icon"
+      sizes="32x32"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        background-color: #2e3131;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+      .container img {
+        width: 40%;
+      }
+      .container a {
+        margin-top: 50px;
+        font-family: "Lora", serif;
+        font-size: 24px;
+        color: white;
+      }
+      .container span {
+        display: inline-block;
+        padding-left: 10px;
+        font-size: 23px;
+        -webkit-transform-origin: 90% 100%;
+        -ms-transform-origin: 90% 100%;
+        transform-origin: 90% 100%;
+        -webkit-animation: wave 5s ease-in-out infinite;
+        animation: wave 5s ease-in-out infinite;
+      }
+      @-webkit-keyframes wave {
+        0%,
+        10% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        5% {
+          -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+        }
+      }
+      @keyframes wave {
+        0%,
+        10% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        5% {
+          -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img src="images/logo.png" />
+      <a
+        href="mailto:ciriacxy@onclickdxy.com"
+        onmouseover="this.href=this.href.replace(/xy/g,'');"
+      >
+        Say hello<span>👋</span></a
+      >
+    </div>
+  </body>
+</html>
