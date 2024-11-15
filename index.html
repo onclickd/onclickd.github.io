@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Onclickd</title>
-    <meta name="author" content="Ciriac Tromp" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclickd Caribbean Software</title>
     <!-- favicons -->
     <link
       rel="shortcut icon"
@@ -17,89 +17,227 @@
       type="image/x-icon"
       sizes="32x32"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/normalize.css" />
     <style>
-      html {
-        height: 100%;
-      }
-      body {
-        height: 100%;
-        background-color: #2e3131;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-      .container {
-        display: -webkit-box;
-        display: -ms-flexbox;
+    /* Reset and basic styling */
+    body {
+        margin: 0;
+        font-family: 'Helvetica Neue', sans-serif;
         display: flex;
-        height: 100%;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
         flex-direction: column;
-      }
-      .container img {
-        width: 40%;
-      }
-      .container a {
-        margin-top: 50px;
-        font-family: "Lora", serif;
-        font-size: 24px;
-        color: white;
-      }
-      .container span {
-        display: inline-block;
-        padding-left: 10px;
-        font-size: 23px;
-        -webkit-transform-origin: 90% 100%;
-        -ms-transform-origin: 90% 100%;
-        transform-origin: 90% 100%;
-        -webkit-animation: wave 5s ease-in-out infinite;
-        animation: wave 5s ease-in-out infinite;
-      }
-      @-webkit-keyframes wave {
-        0%,
-        10% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-        }
-        5% {
-          -webkit-transform: rotate(20deg);
-          transform: rotate(20deg);
-        }
-      }
-      @keyframes wave {
-        0%,
-        10% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-        }
-        5% {
-          -webkit-transform: rotate(20deg);
-          transform: rotate(20deg);
-        }
-      }
-    </style>
-  </head>
+        min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+        background-color: #FAF9F9;
+        color: #1D1D1D;
+    }
 
-  <body>
+    /* Container styling for page width */
+    .container {
+        flex: 1; /* Takes up remaining space, pushing the footer to the bottom */
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /* Company logo styling */
+    .logo {
+        margin-top: 50px;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    /* Get in Touch container styling */
+    .get-in-touch {
+        margin: 70px 0;
+    }
+
+    /* Get in Touch button styling */
+    .get-in-touch-button {
+        padding: 10px 30px;
+        background-color: #0D0C22;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        text-decoration: none;
+    }
+
+    .get-in-touch-button:hover {
+        background-color: #52515F;
+        transform: scale(1.05);
+    }
+
+    /* Tagline styling */
+    .tagline {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .showcase-title {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    /* Brands showcase list styling */
+    .brand-showcase-list {
+        display: flex;
+        margin: 15px 0;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow items to wrap on small screens */
+    }
+
+    /* Brand showcase styling */
+    .brand-showcase {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    /* Brands showcase images styling */
+    .brand-showcase img {
+        max-width: 60%;
+    }
+
+    /* Footer styling */
+    .footer {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        box-sizing: border-box;
+    }
+
+    .footer p {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .footer .small {
+        color: #A1A1A1;
+    }
+
+    .footer-link {
+        color: #A1A1A1;
+        text-decoration: none;
+        font-size: 12px;
+        margin: 0 5px;
+    }
+
+    .footer-link:hover {
+        color: #FFFFFF;
+        text-decoration: underline;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .logo {
+            margin-top: 40px;
+            width: 70%; /* Adjust logo size */
+        }
+
+        .get-in-touch-button {
+            font-size: 12px; /* Adjust button text size */
+        }
+
+        .tagline {
+            font-size: 1.2rem; /* Adjust tagline size */
+            margin-bottom: 30px;
+        }
+
+        .brand-showcase {
+            width: 60px;
+            height: 60px; /* Adjust brand showcase size */
+        }
+
+        .showcase-title {
+            font-size: 12px; /* Adjust title font size */
+        }
+
+        .footer {
+            padding: 15px;
+            font-size: 11px;
+        }
+
+        .footer-link {
+            font-size: 11px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo {
+            width: 60%; /* Smaller logo on very small screens */
+        }
+
+        .get-in-touch-button {
+            font-size: 11px;
+            padding: 8px 20px; /* Smaller button padding */
+        }
+
+        .tagline {
+            font-size: 1rem; /* Smaller tagline font size */
+        }
+
+        .brand-showcase {
+            width: 50px;
+            height: 50px; /* Smaller brand showcase size */
+        }
+
+        .showcase-title {
+            font-size: 11px; /* Adjust title font size */
+        }
+    }
+    </style>
+</head>
+<body>
     <div class="container">
-      <img src="images/logo.png" />
-      <a
-        href="mailto:ciriacxy@onclickdxy.com"
-        onmouseover="this.href=this.href.replace(/xy/g,'');"
-      >
-        Say hello<span>👋</span></a
-      >
+        <!-- Company Logo -->
+        <img src="images/logo.svg" alt="Onclickd Caribbean Software" class="logo">
+
+        <!-- Get in Touch Button -->
+        <div class="get-in-touch">
+            <a href="mailto:ciriacxy@onclickdxy.com" onmouseover="this.href=this.href.replace(/xy/g,'');" class="get-in-touch-button">Get in touch</a>
+        </div>
+
+        <!-- Tagline -->
+        <div class="tagline">We build for scale – driven by cutting-edge technology.</div>
+
+        <div class="showcase-title">Brands We’ve Collaborated With</div>
+
+        <!-- Brand Showcase Marquee -->
+        <div class="brand-showcase-list">
+            <div class="brand-showcase" title="DPG Media"><img src="images/brands/dpg-media.png" alt="DPG Media"></div>
+            <div class="brand-showcase" title="Algemeen Dagblad"><img src="images/brands/ad.png" alt="Algemeen Dagblad"></div>
+            <div class="brand-showcase" title="Het Laatste Nieuws"><img src="images/brands/hln.png" alt="Het Laatste Nieuws"></div>
+            <div class="brand-showcase" title="Parool"><img src="images/brands/parool.svg" alt="Parool"></div>
+            <div class="brand-showcase" title="De Volkskrant"><img src="images/brands/volkskrant.svg" alt="De Volkskrant"></div>
+            <div class="brand-showcase" title="JP.cars"><img src="images/brands/jpcars.png" alt="JP.cars"></div>
+            <div class="brand-showcase" title="HEINEKEN GREENROOM"><img src="images/brands/heineken.png" alt="HEINEKEN GREENROOM"></div>
+            <div class="brand-showcase" title="College voor de Rechten van de Mens"><img src="images/brands/collegemensenrechten.svg" alt="College voor de Rechten van de Mens"></div>
+        </div>
     </div>
-  </body>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Onclickd Caribbean Software. All rights reserved.</p>
+        <p class="small">Santa Cruz, Aruba | KvK nr. H52901.0</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
 </html>
