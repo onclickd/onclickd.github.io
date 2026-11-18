@@ -1,243 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onclickd Caribbean Software</title>
-    <!-- favicons -->
-    <link
-      rel="shortcut icon"
-      href="images/favicons/favicon-16x16.png"
-      type="image/x-icon"
-      sizes="16x16"
-    />
-    <link
-      rel="shortcut icon"
-      href="images/favicons/favicon-32x32.png"
-      type="image/x-icon"
-      sizes="32x32"
-    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Onclickd Caribbean Software is based in Aruba and provides web development, web applications, mobile applications, and integrations.">
+    <title>Onclickd Caribbean Software | Software Development in Aruba</title>
+    <link rel="canonical" href="https://onclickd.com/">
+    <link rel="icon" href="images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
     <style>
-    /* Reset and basic styling */
-    body {
-        margin: 0;
-        font-family: 'Helvetica Neue', sans-serif;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
-        background-color: #FAF9F9;
-        color: #1D1D1D;
-    }
+        :root {
+            color-scheme: light;
+            --background: #faf9f9;
+            --surface: #fff;
+            --text: #202323;
+            --muted: #4d5353;
+            --line: #d8dddd;
+            --footer-min-height: 19rem;
+        }
 
-    /* Container styling for page width */
-    .container {
-        flex: 1; /* Takes up remaining space, pushing the footer to the bottom */
-        margin: 0 auto;
-        max-width: 1200px;
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    /* Company logo styling */
-    .logo {
-        margin-top: 50px;
-        width: 80%;
-        max-width: 500px;
-    }
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font: 1rem/1.6 "Helvetica Neue", Arial, sans-serif;
+        }
 
-    /* Get in Touch container styling */
-    .get-in-touch {
-        margin: 70px 0;
-    }
+        a {
+            color: inherit;
+            text-underline-offset: 0.2em;
+        }
 
-    /* Get in Touch button styling */
-    .get-in-touch-button {
-        padding: 10px 30px;
-        background-color: #0D0C22;
-        color: white;
-        font-size: 13px;
-        font-weight: bold;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.2s;
-        text-decoration: none;
-    }
+        a:hover {
+            text-decoration-thickness: 0.13em;
+        }
 
-    .get-in-touch-button:hover {
-        background-color: #52515F;
-        transform: scale(1.05);
-    }
+        a:focus-visible {
+            outline: 2px solid #35635f;
+            outline-offset: 4px;
+        }
 
-    /* Tagline styling */
-    .tagline {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 50px;
-        text-align: center;
-    }
+        .wrap {
+            width: min(100% - 2.5rem, 64rem);
+            margin-inline: auto;
+        }
 
-    .showcase-title {
-        font-size: 13px;
-        font-weight: 500;
-    }
+        .site-header {
+            border-bottom: 1px solid var(--line);
+        }
 
-    /* Brands showcase list styling */
-    .brand-showcase-list {
-        display: flex;
-        margin: 15px 0;
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap; /* Allow items to wrap on small screens */
-    }
+        .site-header .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem 2rem;
+            padding-block: 1rem;
+        }
 
-    /* Brand showcase styling */
-    .brand-showcase {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        background-color: white;
-    }
-
-    /* Brands showcase images styling */
-    .brand-showcase img {
-        max-width: 60%;
-    }
-
-    /* Footer styling */
-    .footer {
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        font-size: 12px;
-        box-sizing: border-box;
-    }
-
-    .footer p {
-        margin: 0;
-        font-size: 12px;
-    }
-
-    .footer .small {
-        color: #A1A1A1;
-    }
-
-    .footer-link {
-        color: #A1A1A1;
-        text-decoration: none;
-        font-size: 12px;
-        margin: 0 5px;
-    }
-
-    .footer-link:hover {
-        color: #FFFFFF;
-        text-decoration: underline;
-    }
-
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
         .logo {
-            margin-top: 40px;
-            width: 70%; /* Adjust logo size */
+            display: block;
+            width: 2.25rem;
+            height: auto;
         }
 
-        .get-in-touch-button {
-            font-size: 12px; /* Adjust button text size */
+        .site-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem clamp(0.75rem, 3vw, 1.4rem);
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
-        .tagline {
-            font-size: 1.2rem; /* Adjust tagline size */
-            margin-bottom: 30px;
+        .site-nav a {
+            padding-block: 0.25rem;
+            text-decoration: none;
         }
 
-        .brand-showcase {
-            width: 60px;
-            height: 60px; /* Adjust brand showcase size */
+        .site-nav a:hover {
+            text-decoration: underline;
         }
 
-        .showcase-title {
-            font-size: 12px; /* Adjust title font size */
+        .intro, .section, .footer-contact {
+            padding-block: clamp(2.25rem, 6vw, 4.5rem);
         }
 
-        .footer {
-            padding: 15px;
-            font-size: 11px;
+        .section {
+            border-top: 1px solid var(--line);
         }
 
-        .footer-link {
-            font-size: 11px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .logo {
-            width: 60%; /* Smaller logo on very small screens */
+        h1, h2, h3 {
+            margin: 0;
+            line-height: 1.15;
         }
 
-        .get-in-touch-button {
-            font-size: 11px;
-            padding: 8px 20px; /* Smaller button padding */
+        h1 {
+            max-width: 13ch;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            letter-spacing: -0.055em;
         }
 
-        .tagline {
-            font-size: 1rem; /* Smaller tagline font size */
+        h2 {
+            font-size: clamp(1.65rem, 4vw, 2.4rem);
+            letter-spacing: -0.035em;
         }
 
-        .brand-showcase {
-            width: 50px;
-            height: 50px; /* Smaller brand showcase size */
+        h3 {
+            font-size: 1.2rem;
         }
 
-        .showcase-title {
-            font-size: 11px; /* Adjust title font size */
+        p {
+            margin: 0.8rem 0 0;
+            color: var(--muted);
         }
-    }
+
+        .intro p {
+            max-width: 38rem;
+            font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.55rem 1.15rem;
+            border-radius: 2rem;
+            background: var(--text);
+            color: var(--surface);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-button:hover {
+            background: #383e3e;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .service {
+            padding: 1.25rem;
+            border: 1px solid var(--line);
+            border-radius: 0.5rem;
+            background: var(--surface);
+        }
+
+        .process {
+            display: grid;
+            gap: 1.25rem 2rem;
+            margin: 1.5rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .process li {
+            padding-block-start: 1rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .process p {
+            margin-block-start: 0.5rem;
+        }
+
+        #work {
+            /* Leave a full viewport from the Work anchor through the footer. */
+            min-block-size: calc(100vh - var(--footer-min-height));
+            min-block-size: calc(100dvh - var(--footer-min-height));
+        }
+
+        .brands {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+            gap: 0.65rem;
+            margin: 1.25rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .brands li {
+            display: grid;
+            min-height: 5rem;
+            padding: 0.8rem;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 0.4rem;
+            background: var(--surface);
+        }
+
+        .brands img {
+            display: block;
+            width: 100%;
+            max-width: 5.5rem;
+            height: 2.75rem;
+            object-fit: contain;
+        }
+
+        .company-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+            gap: 1rem 2rem;
+            margin: 1.25rem 0 0;
+        }
+
+        .company-details dt {
+            font-weight: 600;
+        }
+
+        .company-details dd {
+            margin: 0.2rem 0 0;
+            color: var(--muted);
+            overflow-wrap: anywhere;
+        }
+
+        .site-footer {
+            display: flex;
+            flex-direction: column;
+            min-block-size: var(--footer-min-height);
+            border-top: 1px solid var(--line);
+        }
+
+        .copyright {
+            margin-block: auto 0;
+            padding-block: 1.25rem;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 36rem) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 48rem) {
+            .process {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Company Logo -->
-        <img src="images/logo.svg" alt="Onclickd Caribbean Software" class="logo">
-
-        <!-- Get in Touch Button -->
-        <div class="get-in-touch">
-            <a href="mailto:infoxy@onclickdxy.com" onmouseover="this.href=this.href.replace(/xy/g,'');" class="get-in-touch-button">Get in touch</a>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/">
+                <img class="logo" src="images/logo-icon.svg" width="36" height="36" alt="Onclickd Caribbean Software home">
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="#services">Services</a>
+                <a href="#process">Approach</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <!-- Tagline -->
-        <div class="tagline">We build for scale – driven by cutting-edge technology.</div>
+    <main class="wrap">
+        <section class="intro" aria-labelledby="intro-heading">
+            <h1 id="intro-heading">Onclickd Caribbean Software</h1>
+            <p>We’re a software development agency based in Aruba, working with clients around the world. We build for the web, develop mobile apps, and connect the systems businesses rely on.</p>
+            <a class="contact-button" href="#contact">Get in touch</a>
+        </section>
 
-        <div class="showcase-title">Brands We’ve Collaborated With</div>
+        <section class="section" id="services" aria-labelledby="services-heading">
+            <h2 id="services-heading">What we build</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Web development</h3>
+                    <p>We build responsive websites that are easy to use on desktop and mobile.</p>
+                </div>
+                <div class="service">
+                    <h3>Web applications</h3>
+                    <p>We build browser-based tools that support business workflows and can grow as more people use them.</p>
+                </div>
+                <div class="service">
+                    <h3>Mobile applications</h3>
+                    <p>We design and develop native and hybrid mobile apps for iOS and Android.</p>
+                </div>
+                <div class="service">
+                    <h3>Integrations</h3>
+                    <p>We connect apps and services so they can share data and automate recurring tasks.</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- Brand Showcase Marquee -->
-        <div class="brand-showcase-list">
-            <div class="brand-showcase" title="DPG Media"><img src="images/brands/dpg-media.png" alt="DPG Media"></div>
-            <div class="brand-showcase" title="Algemeen Dagblad"><img src="images/brands/ad.png" alt="Algemeen Dagblad"></div>
-            <div class="brand-showcase" title="Het Laatste Nieuws"><img src="images/brands/hln.png" alt="Het Laatste Nieuws"></div>
-            <div class="brand-showcase" title="Parool"><img src="images/brands/parool.svg" alt="Parool"></div>
-            <div class="brand-showcase" title="De Volkskrant"><img src="images/brands/volkskrant.svg" alt="De Volkskrant"></div>
-            <div class="brand-showcase" title="JP.cars"><img src="images/brands/jpcars.png" alt="JP.cars"></div>
-            <div class="brand-showcase" title="HEINEKEN GREENROOM"><img src="images/brands/heineken.png" alt="HEINEKEN GREENROOM"></div>
-            <div class="brand-showcase" title="College voor de Rechten van de Mens"><img src="images/brands/collegemensenrechten.svg" alt="College voor de Rechten van de Mens"></div>
+        <section class="section" id="process" aria-labelledby="process-heading">
+            <h2 id="process-heading">How we work</h2>
+            <p>We take a practical approach to building software that fits the way people work.</p>
+            <ol class="process" role="list">
+                <li>
+                    <h3>Scope</h3>
+                    <p>Together, we define what the first release needs to do and identify any technical constraints early.</p>
+                </li>
+                <li>
+                    <h3>Development</h3>
+                    <p>You’ll see working versions as the software takes shape. Your feedback and our testing guide what changes along the way.</p>
+                </li>
+                <li>
+                    <h3>Release</h3>
+                    <p>Before launch, we review the finished work together, confirm how it will go live, and prepare the handover.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section" id="work" aria-labelledby="work-heading">
+            <h2 id="work-heading">Who we’ve worked with</h2>
+            <p>Our software development experience spans more than 15 years, including work with news publishers, automotive companies, beverage brands, and the Netherlands Institute for Human Rights.</p>
+            <ul class="brands" role="list">
+                <li><img src="images/brands/dpg-media.png" alt="DPG Media"></li>
+                <li><img src="images/brands/ad.png" alt="Algemeen Dagblad"></li>
+                <li><img src="images/brands/hln.png" alt="Het Laatste Nieuws"></li>
+                <li><img src="images/brands/parool.svg" alt="Het Parool"></li>
+                <li><img src="images/brands/volkskrant.svg" alt="De Volkskrant"></li>
+                <li><img src="images/brands/jpcars.png" alt="JP.cars"></li>
+                <li><img src="images/brands/heineken.png" alt="Heineken Greenroom"></li>
+                <li><img src="images/brands/collegemensenrechten.svg" alt="College voor de Rechten van de Mens"></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact" aria-labelledby="contact-heading">
+        <div class="wrap footer-contact">
+            <h2 id="contact-heading">Contact</h2>
+            <p>Have a project in mind or a question for us? Send us an email.</p>
+            <dl class="company-details">
+                <div>
+                    <dt>Email</dt>
+                    <dd><a href="mailto:info@onclickd.com">info@onclickd.com</a></dd>
+                </div>
+                <div>
+                    <dt>Location</dt>
+                    <dd>Santa Cruz, Aruba</dd>
+                </div>
+                <div>
+                    <dt>Aruba Chamber of Commerce</dt>
+                    <dd>KvK registration H52901.0</dd>
+                </div>
+            </dl>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; <span id="year"></span> Onclickd Caribbean Software. All rights reserved.</p>
-        <p class="small">Santa Cruz, Aruba | KvK nr. H52901.0</p>
+        <p class="wrap copyright">&copy; <span id="copyright-year">2026</span> Onclickd Caribbean Software</p>
     </footer>
-
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
